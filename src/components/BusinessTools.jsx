@@ -135,7 +135,7 @@ export default function BusinessTools() {
 							<Button size={'small'}>
 								<Link to="/inregistrare-business">Înregistrează-te</Link>
 							</Button>
-							<Link to="/noutati#roadmap" className="font-light">
+							<Link to="/noutati" className="font-light hover:underline">
 								Roadmap funcționalități →
 							</Link>
 						</div>
