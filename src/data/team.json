@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Bogdan Dogaru",
+		"role": "Co-Fondator",
+		"image": "bogdan-dogaru.jpeg",
+		"linkedin": "https://www.linkedin.com/in/bdogaru/",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+	},
+	{
+		"name": "Dragoș Schițcu",
+		"role": "Co-Fondator",
+		"image": "dragos-schitcu.jpeg",
+		"linkedin": "https://www.linkedin.com/in/dragos-schitcu-b90567301",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+	},
+	{
+		"name": "Gheorghe Lupu",
+		"role": "Co-Fondator",
+		"image": "gheorghe-lupu.jpeg",
+		"linkedin": "https://www.linkedin.com/in/lupu-gheorghe/",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+	}
+]

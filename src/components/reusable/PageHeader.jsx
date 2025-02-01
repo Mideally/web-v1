@@ -1,10 +1,13 @@
-export default function PageHeader({ title, subtitle, className }) {
+export default function PageHeader({ title, subtitle, supraTitle, className }) {
 	return (
-		<div className={`pb-8 lg:pb-16 lg:pt-16 ${className}`}>
-			<div className="bg-gradient-to-r from-pink-600 to-indigo-600 rounded-lg py-12 text-white text-center flex flex-col gap-5 shadow-lg border border-gray-200 px-8 lg:px-12">
-				<h1 className="text-4xl font-bold">{title}</h1>
-				<p className="text-lg font-light">{subtitle}</p>
-			</div>
+		<div className={`flex flex-col gap-2 mb-8 ${className}`}>
+			{supraTitle && <p className="text-base font-semibold leading-6 text-indigo-500 uppercase">{supraTitle}</p>}
+			{title && (
+				<h4 className="text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9">{title}</h4>
+			)}
+			{subtitle && (
+				<p className="text-lg font-light leading-8 text-gray-900 sm:text-2xl sm:leading-9">{subtitle}</p>
+			)}
 		</div>
 	);
 }

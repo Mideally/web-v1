@@ -1,19 +1,21 @@
 import React from 'react';
 import Roadmap from '../components/Roadmap';
 import Section from '../components/reusable/Section';
-import SectionHeader from '../components/reusable/SectionHeader';
+import PageHeader from '../components/reusable/PageHeader';
 import arena1 from '../assets/arena-1.jpg';
+import Button from '../components/reusable/Button';
+import { Link } from 'react-router-dom';
 
 export default function News() {
 	return (
 		<Section>
-			{/* <PageHeader title="Noutăți" subtitle="Află ultimele informații despre Mideally." /> */}
-			<Roadmap />
-			<SectionHeader
+			<PageHeader
 				title="Noutăți"
 				subtitle="Apariții publice, evenimente și alte informații despre Mideally."
 				className="text-center mt-8 lg:mt-16"
 			/>
+
+			<Roadmap />
 
 			<div className="rounded-3xl overflow-hidden relative mb-8 lg:mb-16">
 				<img
@@ -30,6 +32,19 @@ export default function News() {
 						ideea Mideally. Proiectul s-a bucurat de feedback pozitiv, unul dintre rezultatele imediate
 						fiind un parteneriat încheiat cu platforma Digital România, fondată de Horia Nes.
 					</p>
+				</div>
+			</div>
+			<div className="mt-16 mb-16 flex justify-center flex-col items-center gap-4">
+				<p className="text-lg text-center">
+					Înscrie-ți businessul în Mideally și conectează-te la clienții tăi.
+				</p>
+				<div className="flex justify-center items-center gap-4 flex-col lg:flex-row">
+					<Button size={'small'}>
+						<Link to="/inregistrare-business">Înregistrează-te</Link>
+					</Button>
+					<Link to="/noutati" className="font-light hover:underline">
+						Roadmap funcționalități →
+					</Link>
 				</div>
 			</div>
 		</Section>

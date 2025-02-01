@@ -1,13 +1,13 @@
 import React from 'react';
 import Button from '../components/reusable/Button';
 import Section from '../components/reusable/Section';
-import SectionHeader from '../components/reusable/SectionHeader';
+import PageHeader from '../components/reusable/PageHeader';
 
 export default function Contact() {
 	return (
 		<Section>
 			<div className="pb-16">
-				<SectionHeader
+				<PageHeader
 					title="Contact"
 					subtitle="Contactează-ne pentru orice întrebare sau feedback."
 					className="text-center mt-8 lg:mt-16"

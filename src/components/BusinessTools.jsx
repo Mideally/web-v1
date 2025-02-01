@@ -82,7 +82,7 @@ const features = [
 
 export default function BusinessTools() {
 	return (
-		<div className="py-16 bg-white border-t border-gray-200">
+		<div className="py-16 lg:py-32 bg-white border-t border-gray-200">
 			<Section>
 				<div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="lg:grid lg:grid-cols-12 lg:gap-8">

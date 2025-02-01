@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import Button from './reusable/Button';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo-3.png';
 
 const NavigationLinks = ({ isMobile = false, onClick = () => {} }) => {
@@ -7,7 +9,7 @@ const NavigationLinks = ({ isMobile = false, onClick = () => {} }) => {
 		{ to: '/', text: 'Acasă' },
 		{ to: '/despre-noi', text: 'Despre noi' },
 		{ to: '/noutati', text: 'Noutăți' },
-		{ to: '/contact', text: 'Contact' },
+		// { to: '/contact', text: 'Contact' },
 	];
 
 	const baseStyles = `transition-colors duration-200`;
@@ -52,6 +54,9 @@ export default function Header() {
 					{/* Desktop Navigation */}
 					<nav className="hidden md:flex items-center space-x-8">
 						<NavigationLinks />
+						<Button size={'small'}>
+							<Link to="/inregistrare-business">Înregistrează-ți businessul →</Link>
+						</Button>
 					</nav>
 
 					{/* Mobile Menu Button */}
@@ -108,6 +113,9 @@ export default function Header() {
 					{/* Mobile Navigation Links */}
 					<nav className="flex flex-col items-center justify-center flex-1 space-y-8">
 						<NavigationLinks isMobile={true} onClick={toggleMenu} />
+						<Button size={'small'}>
+							<Link to="/inregistrare-business">Înregistrează-ți businessul →</Link>
+						</Button>
 					</nav>
 				</div>
 			</div>

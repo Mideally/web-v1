@@ -1,8 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './reusable/Button';
 import videoBanner1 from '../assets/video-banner-1.mp4';
 
 export default function HomepageHero() {
+	const [email, setEmail] = useState('');
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+	const [success, setSuccess] = useState(false);
+	const senderURL = 'https://api.sender.net/v2/subscribers';
+	const senderAPIKey = process.env.REACT_APP_SENDER_API_KEY;
+
+	const headers = {
+		Authorization: `Bearer ${senderAPIKey}`,
+		'Content-Type': 'application/json',
+		Accept: 'application/json',
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setLoading(true);
+
+		try {
+			const data = {
+				email: email,
+				groups: ['ax8VMB'],
+				fields: { '{$type}': 'User' },
+				trigger_automation: false,
+			};
+
+			const response = await fetch(senderURL, {
+				method: 'POST',
+				headers: headers,
+				body: JSON.stringify(data),
+			});
+
+			if (response.ok) {
+				setEmail('');
+				setSuccess(true);
+			} else {
+				throw new Error('Network response was not ok');
+			}
+		} catch (error) {
+			console.error('Error:', error);
+			setError(true);
+		} finally {
+			setLoading(false);
+		}
+	};
+
 	return (
 		<section>
 			<div className="grid max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-8 lg:grid-cols-12">
@@ -41,7 +86,7 @@ export default function HomepageHero() {
 						Conectează-te cu afacerile locale preferate și profită de oferte exclusive în timp real. Cu
 						Mideally, fiecare zi aduce o nouă oportunitate de a economisi.
 					</p>
-					<form className="flex flex-col sm:flex-row gap-4">
+					<form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
 						<div className="relative">
 							<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
 								<svg
@@ -56,15 +101,20 @@ export default function HomepageHero() {
 							</div>
 							<input
 								type="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
 								placeholder="Adresa de email"
 								required
 							/>
 						</div>
-						<Button color="pink" size={'small'}>
-							Află când lansăm
+						<Button type="submit" color="pink" size={'small'} loading={loading} disabled={loading}>
+							{loading ? 'Află când lansăm' : success ? 'Mulțumim!' : 'Află când lansăm'}
 						</Button>
 					</form>
+					{error && (
+						<p className="text-red-500 mt-2 text-sm">A apărut o eroare. Vă rugăm încercați din nou.</p>
+					)}
 				</div>
 			</div>
 		</section>
