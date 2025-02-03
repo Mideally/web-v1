@@ -10,6 +10,8 @@ export default function HomepageHero() {
 	const senderURL = 'https://api.sender.net/v2/subscribers';
 	const senderAPIKey = process.env.REACT_APP_SENDER_API_KEY;
 
+	console.log('Sender API Key:', senderAPIKey);
+
 	const headers = {
 		Authorization: `Bearer ${senderAPIKey}`,
 		'Content-Type': 'application/json',

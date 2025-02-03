@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-export default function SEO({ title, description, image = 'https://yoursite.com/default-og.jpg', url }) {
+export default function SEO({ title, description, image = 'https://mideally.com/default-og.jpg', url }) {
 	const siteTitle = 'Mideally - Conectăm clienții cu business-urile';
 
 	return (

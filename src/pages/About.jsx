@@ -34,7 +34,10 @@ export default function About() {
 
 	return (
 		<>
-			<SEO title="Despre noi" description="Despre noi" />
+			<SEO
+				title="Despre noi"
+				description="Află mai multe despre echipa noastră și cum a luat naștere Mideally."
+			/>
 			<Section>
 				<PageHeader
 					title="Despre noi"
