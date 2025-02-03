@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Quote({ text, author, role, image }) {
 	return (
-		<figure className="max-w-screen-md mx-auto mt-12 mb-12 bg-white rounded-lg p-16 shadow-lg border border-gray-200">
+		<figure className="max-w-screen-md mx-auto mt-12 mb-12 bg-white rounded-lg p-12 lg:p-16 shadow-lg border border-gray-200">
 			<div className="relative">
 				{/* Large quote mark */}
 				<svg

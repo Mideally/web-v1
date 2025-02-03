@@ -1,14 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Button from './reusable/Button';
-import videoBanner1 from '../assets/video-banner-1.mp4';
 
 export default function HomepageHero() {
 	const [email, setEmail] = useState('');
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(false);
+	const [videoLoaded, setVideoLoaded] = useState(false);
+	const videoRef = useRef(null);
+	const videoWrapperRef = useRef(null);
 	const senderURL = 'https://api.sender.net/v2/subscribers';
 	const senderAPIKey = process.env.REACT_APP_SENDER_API_KEY;
+
+	useEffect(() => {
+		const options = {
+			root: null,
+			rootMargin: '50px',
+			threshold: 0.1,
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting && !videoLoaded) {
+					const video = videoRef.current;
+					if (video) {
+						video.src = require('../assets/video-banner-1.mp4');
+						video.load();
+						setVideoLoaded(true);
+
+						video.addEventListener(
+							'loadeddata',
+							() => {
+								video.play();
+							},
+							{ once: true }
+						);
+					}
+				}
+			});
+		}, options);
+
+		// Store the current value of the ref
+		const currentWrapper = videoWrapperRef.current;
+
+		if (currentWrapper) {
+			observer.observe(currentWrapper);
+		}
+
+		return () => {
+			if (currentWrapper) {
+				observer.unobserve(currentWrapper);
+			}
+		};
+	}, [videoLoaded]);
 
 	const headers = {
 		Authorization: `Bearer ${senderAPIKey}`,
@@ -52,16 +96,23 @@ export default function HomepageHero() {
 		<section>
 			<div className="grid max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-8 lg:grid-cols-12">
 				<div className="mb-8 lg:mb-0 lg:mt-0 lg:col-span-5 lg:flex order-1 lg:order-2">
-					<video
-						className="w-full h-64 lg:h-auto rounded-lg object-cover shadow-lg border border-gray-200"
-						autoPlay
-						muted
-						loop
-						playsInline
+					<div
+						ref={videoWrapperRef}
+						className="w-full h-64 lg:h-auto rounded-lg overflow-hidden shadow-lg border border-gray-200"
 					>
-						<source src={videoBanner1} type="video/mp4" />
-						Your browser does not support the video tag.
-					</video>
+						<video
+							ref={videoRef}
+							className="w-full h-full object-cover"
+							autoPlay
+							muted
+							loop
+							playsInline
+							poster={require('../assets/video-poster.jpg')}
+						>
+							<source type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</div>
 				</div>
 				<div className="mr-auto place-self-center lg:col-span-7 order-2 lg:order-1 lg:pr-8">
 					<h1 className="mb-4 text-4xl font-extrabold tracking-tight lg:leading-tight md:text-5xl xl:text-6xl">

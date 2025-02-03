@@ -7,7 +7,7 @@ import BusinessTools from '../components/BusinessTools';
 const Home = () => {
 	return (
 		<>
-			<SEO title="Acasă" description="Acasă" />
+			<SEO title="Acasă" description="Acasă | Mideally - Conectăm clienții cu business-urile" />
 			<HomepageHero />
 			<HomepageFeatures />
 			<BusinessTools />

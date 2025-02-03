@@ -5,30 +5,34 @@ import PageHeader from '../components/reusable/PageHeader';
 import SectionHeader from '../components/reusable/SectionHeader';
 import SimpleCard from '../components/reusable/SimpleCard';
 import team from '../data/team.json';
-import ExampleImage from '../assets/roadmap-1.jpg';
 import Quote from '../components/reusable/Quote';
 import Button from '../components/reusable/Button';
 import { Link } from 'react-router-dom';
+import missionAndVisionImage1 from '../assets/mv-1.jpg';
+import missionAndVisionImage2 from '../assets/mv-2.jpg';
+import missionAndVisionImage3 from '../assets/mv-3.jpg';
 
 export default function About() {
 	const missionAndVision = [
 		{
-			title: 'Mobile friendly',
+			title: 'Democratizarea Marketingului',
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			image: ExampleImage,
+				'Oferim IMM-urilor acces la instrumente de marketing performante, anterior disponibile doar marilor companii. Prin tehnologie și inovație, transformăm micile afaceri în branduri locale puternice.',
+			image: missionAndVisionImage1,
 		},
+
 		{
-			title: 'Performance',
+			title: 'Creștere Sustenabilă',
 			description:
-				'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-			image: ExampleImage,
+				'Construim un ecosistem în care afacerile locale pot scala organic, având la dispoziție instrumentele potrivite pentru a-și crește vizibilitatea și a atrage clienți fideli în mod eficient și accesibil.',
+			image: missionAndVisionImage2,
 		},
+
 		{
-			title: 'Security',
+			title: 'Comunitate și Economii',
 			description:
-				'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-			image: ExampleImage,
+				'Conectăm comercianții locali cu consumatorii care caută să economisească inteligent, creând o comunitate vibrantă unde toată lumea câștigă: afacerile își dezvoltă prezența locală, iar clienții beneficiază de oferte exclusive.',
+			image: missionAndVisionImage3,
 		},
 	];
 
@@ -63,33 +67,39 @@ export default function About() {
 			<Section className="pt-8 lg:pt-2">
 				<SectionHeader
 					title="Povestea Mideally"
-					subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					subtitle="Fiecare poveste de succes începe cu un vis și o misiune. Pentru noi, totul a pornit de la dorința de a face o diferență reală în societate, de a rezolva probleme concrete și de a crea un impact pozitiv în comunitățile locale. Mideally s-a născut din această ambiție, transformându-se dintr-o idee îndrăzneață într-o platformă care conectează afacerile locale cu oamenii care vor să economisească inteligent."
 					className="text-center mt-8 lg:mt-16"
 				/>
 				<p className="font-light leading-8 text-gray-900 text-center pb-8 lg:pb-16">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Mideally s-a născut din dorința de a crea un impact real în comunitatea locală, conectând afacerile
+					mici și mijlocii cu clienții lor. Am observat că există o discrepanță între IMM-urile care oferă
+					produse și servicii de calitate și potențialii clienți care caută astfel de oferte. Ne-am propus să
+					construim o platformă care să faciliteze această conexiune, făcând marketingul și promovarea
+					accesibile pentru orice antreprenor local.
 				</p>
 				<Quote
-					text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					text="Credem că piața IMM-urilor se potrivește perfect cu profilul consumatorului „vânător de oferte”. Vrem să oferim soluția ideală pentru ca micii antreprenori să devină branduri locale, iar utilizatorii noștri să economisească lunar."
 					author="Dragoș Schițcu"
 					role="Co-fondator Mideally"
 					image={require('../assets/team/dragos-schitcu.jpeg')}
 				/>
 				<p className="font-light leading-8 text-gray-900 text-center pt-8 lg:pt-16">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Astăzi, Mideally este o platformă dedicată IMM-urilor, având ca obiectiv principal scalarea micilor
+					afaceri și crearea unei experiențe de cumpărare optimizate pentru consumatori. Ne dorim să oferim
+					antreprenorilor instrumentele necesare pentru a-și transforma afacerile în branduri locale
+					puternice, în timp ce consumatorii beneficiază de produse și servicii de calitate la prețuri
+					accesibile. În esență, misiunea noastră este să creăm un ecosistem sustenabil, unde atât afacerile,
+					cât și comunitățile locale prosperă împreună. Related Cum pot conecta IMM-urile cu clienții lor în
+					mod eficient Ce strategii pot folosi pentru a crește interacțiunile între IMM-uri și clienți Cum pot
+					măsura succesul în conectarea IMM-urilor cu clienții Care sunt beneficiile conectării IMM-urilor cu
+					clienții lor Cum pot identifica nevoile clienților pentru a conecta mai bine IMM-urile
 				</p>
 			</Section>
 
 			<Section className="pb-16 pt-8 lg:pt-2">
 				<SectionHeader
 					title="Misiune și viziune"
-					subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					subtitle="La Mideally, transformăm modul în care afacerile locale și consumatorii interacționează, creând un ecosistem digital care aduce beneficii ambelor părți. Misiunea noastră se concentrează pe trei piloni fundamentali:"
 					className="text-center mt-8 lg:mt-16"
 				/>
 				<div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 place-items-center">
@@ -102,6 +112,11 @@ export default function About() {
 						/>
 					))}
 				</div>
+				<p className="font-light leading-8 text-gray-900 text-center pt-8 lg:pt-16">
+					Prin aceste trei direcții strategice, Mideally devine catalizatorul care transformă peisajul
+					comercial local, aducând împreună tehnologia, comunitatea și valoarea adăugată într-un mod care
+					beneficiază tuturor părților implicate.
+				</p>
 				<div className="mt-16 flex justify-center flex-col items-center gap-4">
 					<p className="text-lg text-center">
 						Înscrie-ți businessul în Mideally și conectează-te la clienții tăi.

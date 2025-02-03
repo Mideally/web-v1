@@ -182,7 +182,7 @@ export default function RegisterBusiness() {
 													</svg>
 												</div>
 												<input
-													type="url"
+													type="text"
 													name="website"
 													id="website"
 													value={formData.website}

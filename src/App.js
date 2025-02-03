@@ -7,11 +7,12 @@ import News from './pages/News';
 import Contact from './pages/Contact';
 import RegisterBusiness from './pages/RegisterBusiness';
 import Layout from './components/Layout';
-
+import ScrollToTop from './components/utils/ScrollToTop';
 export default function App() {
 	return (
 		<HelmetProvider>
 			<BrowserRouter>
+				<ScrollToTop />
 				<Routes>
 					<Route path="/" element={<Layout />}>
 						<Route index element={<Home />} />
