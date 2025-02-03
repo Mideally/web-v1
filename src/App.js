@@ -8,7 +8,11 @@ import Contact from './pages/Contact';
 import RegisterBusiness from './pages/RegisterBusiness';
 import Layout from './components/Layout';
 import ScrollToTop from './components/utils/ScrollToTop';
+import ReactGA from 'react-ga4';
+
 export default function App() {
+	ReactGA.initialize('G-6RG8B7LJW0');
+
 	return (
 		<HelmetProvider>
 			<BrowserRouter>
