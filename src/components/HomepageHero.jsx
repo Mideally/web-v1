@@ -159,10 +159,22 @@ export default function HomepageHero() {
 								required
 							/>
 						</div>
-						<Button type="submit" color="pink" size={'small'} loading={loading} disabled={loading}>
-							{loading ? 'Află când lansăm' : success ? 'Mulțumim!' : 'Află când lansăm'}
+						<Button
+							type="submit"
+							color="pink"
+							size={'small'}
+							loading={loading}
+							disabled={loading}
+							className={loading ? 'opacity-50' : ''}
+						>
+							{loading ? '...' : 'Află când lansăm'}
 						</Button>
 					</form>
+					{success && (
+						<p className="text-green-500 mt-2 text-sm">
+							Te-ai înscris cu succes! Vei primi un email când lansăm platforma.
+						</p>
+					)}
 					{error && (
 						<p className="text-red-500 mt-2 text-sm">A apărut o eroare. Vă rugăm încercați din nou.</p>
 					)}

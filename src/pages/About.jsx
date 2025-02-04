@@ -89,10 +89,7 @@ export default function About() {
 					antreprenorilor instrumentele necesare pentru a-și transforma afacerile în branduri locale
 					puternice, în timp ce consumatorii beneficiază de produse și servicii de calitate la prețuri
 					accesibile. În esență, misiunea noastră este să creăm un ecosistem sustenabil, unde atât afacerile,
-					cât și comunitățile locale prosperă împreună. Related Cum pot conecta IMM-urile cu clienții lor în
-					mod eficient Ce strategii pot folosi pentru a crește interacțiunile între IMM-uri și clienți Cum pot
-					măsura succesul în conectarea IMM-urilor cu clienții Care sunt beneficiile conectării IMM-urilor cu
-					clienții lor Cum pot identifica nevoile clienților pentru a conecta mai bine IMM-urile
+					cât și comunitățile locale prosperă împreună.
 				</p>
 			</Section>
 
