@@ -6,7 +6,7 @@ import About from './pages/About';
 import News from './pages/News';
 import Contact from './pages/Contact';
 import RegisterBusiness from './pages/RegisterBusiness';
-import CompanyPage from './pages/CompanyPage';
+import LocationPage from './pages/LocationPage';
 import Layout from './components/Layout';
 import ScrollToTop from './components/utils/ScrollToTop';
 import ReactGA from 'react-ga4';
@@ -28,7 +28,7 @@ export default function App() {
 						<Route path="/inregistrare-business" element={<RegisterBusiness />} />
 						<Route path="/parteneri" element={<Partners />} />
 						<Route path="/parteneri/:citySlug" element={<Partners />} />
-						<Route path="/parteneri/:citySlug/:id" element={<CompanyPage />} />
+						<Route path="/parteneri/:citySlug/:id" element={<LocationPage />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>

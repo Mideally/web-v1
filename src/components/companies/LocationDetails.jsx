@@ -1,5 +1,4 @@
 import React from 'react';
-import Map from '../reusable/Map';
 
 export default function CompanyDetails({ company }) {
 	return (
@@ -13,14 +12,6 @@ export default function CompanyDetails({ company }) {
 					<p className="text-gray-600">
 						{company.operatingHours?.days}: {company.operatingHours?.hours}
 					</p>
-
-					{/* Map Section */}
-					{company.location.coordinates && (
-						<div className="mt-6">
-							<h2 className="text-xl font-semibold mb-4">Locație</h2>
-							<Map lat={company.location.coordinates.lat} lng={company.location.coordinates.lng} />
-						</div>
-					)}
 				</div>
 
 				<div>

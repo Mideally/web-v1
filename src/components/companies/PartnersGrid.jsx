@@ -1,5 +1,5 @@
 import React from 'react';
-import CompanyCard from './CompanyCard';
+import CompanyCard from './LocationCard';
 import Button from '../reusable/Button';
 
 export default function CompanyGrid({ companies, visibleCount, onLoadMore }) {

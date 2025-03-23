@@ -2,11 +2,34 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function CompanyCard({ company }) {
+	const activeVouchersCount = company.vouchers?.active?.length || 0;
+
 	return (
 		<Link
 			to={`/parteneri/${company.location.citySlug}/${company.id}`}
-			className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+			className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 relative"
 		>
+			{/* Voucher notification bubble */}
+			{activeVouchersCount > 0 && (
+				<div className="absolute top-2 right-2 z-10">
+					<div
+						className="bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-full 
+								   flex items-center justify-center min-w-[1.5rem] h-6
+								   group/tooltip relative"
+					>
+						<span>{activeVouchersCount}</span>
+						{/* Tooltip - now positioned below */}
+						<div className="absolute top-full right-0 mt-2 hidden group-hover/tooltip:block">
+							<div className="bg-gray-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
+								Discounturi active
+								{/* Arrow - now positioned at top-right */}
+								<div className="absolute -top-1 right-3 transform -translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			)}
+
 			<div className="aspect-video relative overflow-hidden">
 				<img
 					src={company.branding.featuredImage}

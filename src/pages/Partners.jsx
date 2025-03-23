@@ -4,7 +4,7 @@ import companiesData from '../data/companies.json';
 import Section from '../components/reusable/Section';
 import PageHeader from '../components/reusable/PageHeader';
 import CityFilter from '../components/companies/CityFilter';
-import CompanyGrid from '../components/companies/CompanyGrid';
+import CompanyGrid from '../components/companies/PartnersGrid';
 
 export default function Partners() {
 	const { citySlug } = useParams();
